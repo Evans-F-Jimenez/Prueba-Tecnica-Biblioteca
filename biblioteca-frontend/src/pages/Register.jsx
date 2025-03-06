@@ -37,13 +37,13 @@ function Register() {
 
         dispatch(registerUser(form)).then((res) => {
             if (res.meta.requestStatus === "fulfilled") {
-                navigate("/");
+                navigate("/login");
             }
         });
     };
 
     return (
-        <div className="flex flex-col items-center rounded-lg  justify-center h-180 bg-[url(./register-background.png)] bg-center bg-no-repeat">
+        <div className="flex flex-col items-center rounded-lg justify-center h-197 bg-[url(./register-background.png)] bg-center bg-no-repeat">
             <div className="bg-white shadow-lg rounded-lg p-10 w-full max-w-md">
                 <h2 className="text-2xl font-bold text-green-700 text-center mb-6">Registro</h2>
                 {error && <p className="text-red-500 text-center mb-4">{error}</p>}
@@ -88,7 +88,7 @@ function Register() {
                     >
                         {loading ? "Registrando..." : "Registrarse"}
                     </button>
-                    <Link to={"/"} className="text-sm text-center">
+                    <Link to={"/login"} className="text-sm text-center">
                         Ya tiene un usuario? Inicia sesion.
                     </Link>
                 </form>

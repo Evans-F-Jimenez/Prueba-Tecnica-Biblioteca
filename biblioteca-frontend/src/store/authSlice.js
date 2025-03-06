@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, isRejectedWithValue } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "https://localhost:5000/api/auth";
+const API_URL = "https://localhost:5000/api";
 
 export const registerUser = createAsyncThunk("auth/register", async (userData, { rejectWithValue }) => {
     try {

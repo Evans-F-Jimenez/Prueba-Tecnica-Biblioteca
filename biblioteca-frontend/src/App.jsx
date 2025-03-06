@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import BookDetail from './pages/BookDetail'
 import InsertBook from './pages/InsertBook'
+import Favorites from './pages/Favorites'
 import './index.css';
 
 
@@ -14,11 +15,12 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/dashboard' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Home />} />
         <Route path='/libro:id' element={<BookDetail />} />
         <Route path='/register' element={<Register />} />
         <Route path='/myprofile' element={<MyProfile />} />
+        <Route path='/favorites' element={<Favorites />} />
         <Route path='/insertbook' element={<InsertBook />} />
       </Routes>
     </>

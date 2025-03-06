@@ -8,15 +8,16 @@ const Home = () => {
     const [libros, setLibros] = useState([]);
 
     useEffect(() => {
-        axios.get(`${process.env.API_URL}/libros`).then(res => setLibros(res.data.libros)).catch(err => console.error("Error al obtener los libros: ", err));
+        axios.get("https://localhost:5000/api/libros").then(res => setLibros(res.data.libros)).catch(err => console.error("Error al obtener los libros: ", err));
 
     }, []);
 
     return (
 
-        <><Topbar />
+        <>
+            <Topbar />
             <div className='mt-6 w-full'>
-                <div className='pl-20 pr-20 '>
+                <div className='pl-20 pr-20'>
                     <div className="max-w-9x1 bg-white shadow-lg rounded-md p-15 mt-4">
                     </div>
                     <div className="w-full max-w-8xl flex flex-col items-center mt-8 ">
@@ -31,7 +32,7 @@ const Home = () => {
                         </div>
                         <div className="w-full h-1 bg-green-600" />
                     </div>
-                    <div className="mt-10 pb-60 p-1 bg-white shadow-lg max-w-9x1 border border-red-500">
+                    <div className="mt-10 pb-90 p-1 bg-white shadow-lg max-w-9x1 border border-green-700">
                         <ul className="mt-8 space-y-3">
                             {libros.length > 0 ? (
                                 libros.map(libro => (
