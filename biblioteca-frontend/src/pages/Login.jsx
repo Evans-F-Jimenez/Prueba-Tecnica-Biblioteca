@@ -25,7 +25,7 @@ function Login() {
     };
 
     return (
-        <div className="flex flex-col items-center rounded-lg justify-center h-screen bg-[url(./login-background.png)]">
+        <div className="flex flex-col items-center rounded-lg justify-center h-screen bg-[url(./login-background.png)] bg-center bg-no-repeat">
             <h1 className="text-7xl font-bold text-black text-center mb-6 pb-10">MyLibrary</h1>
             <div className="bg-white shadow-lg rounded-lg p-9 w-full max-w-md">
                 <h2 className="text-2xl font-bold text-green-700 text-center mb-5">Iniciar Sesión</h2>
@@ -36,7 +36,7 @@ function Login() {
                     <button type="submit" disabled={loading} className={`p-3 text-white font-semibold rounded-md transition duration-200 ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-green-600 hover:bg-green-700"
                         }`} >{loading ? "Ingresando..." : "Ingresar"}
                     </button>
-                    <Link to={"/register"} className="text-sm">
+                    <Link to={"/register"} className="text-sm text-center">
                         Desea registrar un usuario?
                     </Link>
                 </form>

@@ -8,7 +8,7 @@ const Home = () => {
     const [libros, setLibros] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/libros").then(res => setLibros(res.data.libros)).catch(err => console.error("Error al obtener los libros: ", err));
+        axios.get(`${process.env.API_URL}/libros`).then(res => setLibros(res.data.libros)).catch(err => console.error("Error al obtener los libros: ", err));
 
     }, []);
 
