@@ -4,10 +4,9 @@ const authMiddleware = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
-router.get('/', authMiddleware, crearReview);
-router.post('/:BookId', authMiddleware, obtenerReview);
-router.put('/:BookId', authMiddleware, actualizarReview);
-router.delete('/:BookId', authMiddleware, eliminarReview);
-
+router.post('/', authMiddleware, crearReview);
+router.get('/:bookId', authMiddleware, obtenerReview);
+router.put('/:reviewId', authMiddleware, actualizarReview);
+router.delete('/:reviewId', authMiddleware, eliminarReview);
 
 module.exports = router;

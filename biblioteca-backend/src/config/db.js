@@ -6,9 +6,8 @@ const connectDB = async () => {
         return;
     }
 
-    if (mongoose.connection.readyState >= 1) {
-        console.log('⚠️ Ya hay una conexión activa a MongoDB.');
-        return;
+    if (mongoose.connection.readyState !== 0) {
+        await mongoose.connection.close();
     }
 
     try {

@@ -8,7 +8,7 @@ Este es un sistema de gestión de biblioteca personal desarrollado en **MERN Sta
 
 ## Tecnologías Utilizadas
 
-### Backend
+### [Backend](https://github.com/Evans-F-Jimenez/Prueba-Tecnica-Biblioteca/blob/develop/biblioteca-backend/backend.md)
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
@@ -19,7 +19,7 @@ Este es un sistema de gestión de biblioteca personal desarrollado en **MERN Sta
 ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)
 ![Supertest](https://img.shields.io/badge/Supertest-blue?style=for-the-badge)
 
-### Frontend
+### [Frontend](https://github.com/Evans-F-Jimenez/Prueba-Tecnica-Biblioteca/blob/develop/biblioteca-frontend/frontend.md)
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
@@ -65,8 +65,8 @@ Este es un sistema de gestión de biblioteca personal desarrollado en **MERN Sta
 4. Configurar las variables de entorno en `biblioteca-backend/.env`:
    ```env
    PORT=5000
-   MONGO_URI=mongodb://localhost:27017/biblioteca
-   JWT_SECRET=tu_secreto
+   MONGO_URL=mongodb://localhost:27017/biblioteca
+   JWT_SECRET={tu_clave_secreta}
    ```
 5. Iniciar el servidor:
    ```bash
@@ -83,11 +83,7 @@ Este es un sistema de gestión de biblioteca personal desarrollado en **MERN Sta
    ```bash
    npm install
    ```
-3. Configurar las variables de entorno en `biblioteca-frontend/.env`:
-   ```env
-   API_URL=http://localhost:5000/api
-   ```
-4. Iniciar el servidor de desarrollo:
+3. Iniciar el servidor de desarrollo:
    ```bash
    npm run dev
    ```
@@ -102,7 +98,7 @@ Este es un sistema de gestión de biblioteca personal desarrollado en **MERN Sta
 
 2. Para ejecutar las pruebas del backend:
    ```bash
-   npm run test
+   npm test
    ```
 
 ## Despliegue

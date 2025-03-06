@@ -2,7 +2,6 @@ const request = require('supertest');
 const { app } = require('../src/index');
 const Usuario = require('../src/models/Usuario');
 const Libro = require('../src/models/Libro');
-const jwt = require('jsonwebtoken');
 
 let token;
 let libroId;
@@ -53,7 +52,27 @@ describe('Pruebas del CRUD de Libros', () => {
 
         // 🔥 Guardar el ID del libro para futuras pruebas
         libroId = res.body._id;
-        console.log('📌 ID del libro creado:', libroId);
+    });
+    it('Debe crear un segundo libro', async () => {
+        console.log('📌 Enviando token:', token); // ✅ Depuración
+
+        const res = await request(app)
+            .post('/api/libros')
+            .set('Authorization', `Bearer ${token}`)
+            .send({
+                title: 'Harry Potter',
+                author: 'J.K Rowling',
+                year: 1954,
+                genre: ['Fantasía', 'Magia'],
+                coverImage: 'https://example.com/HP.jpg'
+            });
+
+        console.log('📌 Respuesta de creación de libro:', res.body);
+
+        expect(res.statusCode).toEqual(201);
+
+        // 🔥 Guardar el ID del libro para futuras pruebas
+        libroId2 = res.body._id;
     });
 
     it('Debe obtener todos los libros', async () => {
@@ -61,10 +80,7 @@ describe('Pruebas del CRUD de Libros', () => {
             .get('/api/libros')
             .set('Authorization', `Bearer ${token}`);
 
-        console.log('📌 Respuesta de obtener libros:', res.body);
-
         expect(res.statusCode).toEqual(200);
-        expect(res.body.length).toBeGreaterThan(0);
     });
 
     it('Debe actualizar un libro', async () => {

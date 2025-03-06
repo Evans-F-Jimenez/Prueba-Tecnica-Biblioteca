@@ -11,10 +11,7 @@ beforeAll(async () => {
     mongoServer = await MongoMemoryServer.create();
     const mongoUri = mongoServer.getUri();
 
-    await mongoose.connect(mongoUri, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
+    await mongoose.connect(mongoUri);
 });
 
 afterAll(async () => {

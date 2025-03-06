@@ -1,13 +1,14 @@
 # Node.js
-node_modules/
+biblioteca-backend/node_modules
+biblioteca-frontend/node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 .vscode/
 .DS_Store
-.env
-.env.test
+biblioteca-backend/.env
+biblioteca-backend/.env.test
 
 # Logs
 logs
