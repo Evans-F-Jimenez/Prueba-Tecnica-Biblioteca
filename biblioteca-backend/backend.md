@@ -90,6 +90,8 @@ backend/
 
 - **`POST /api/reviews`** - Crear una reseña _(requiere autenticación)_
 - **`GET /api/reviews/:bookId`** - Obtener todas las reseñas de un libro _(requiere autenticación)_
+- **`GET /api/reviews/:reviewId`** - Actualizar la reseña de un libro _(requiere autenticación)_
+- **`GET /api/reviews/:reviewId`** - Eliminar la reseña de un libro _(requiere autenticación)_
 
 ## Pruebas (Tests)
 
@@ -136,10 +138,7 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(process.env.MONGO_URL);
     console.log("📌 MongoDB conectado");
   } catch (error) {
     console.error("❌ Error de conexión a MongoDB: ", error);
