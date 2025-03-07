@@ -101,6 +101,12 @@ Este es un sistema de gestión de biblioteca personal desarrollado en **MERN Sta
    npm test
    ```
 
+## Ramas del proyecto
+
+- Master
+- Testing
+- Develop
+
 ## Despliegue
 
 Para construir y desplegar la aplicación:
